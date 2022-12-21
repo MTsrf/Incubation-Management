@@ -1,20 +1,20 @@
-import mongoose from "mongoose";   
+import mongoose from "mongoose";
 
-const server = '127.0.0.1:27017'; //db server
+const server = 'mongodb+srv://SharafuMTH:SharafuMTH8124@cluster0.m6j01rv.mongodb.net/Incubation?retryWrites=true&w=majority'; //db server
 const dbname = 'incubations'; // database name
 
-class Database{
-    constructor(){
+class Database {
+    constructor() {
         this._connect()
     }
-    _connect(){
-        mongoose.connect(`mongodb://${server}/${dbname}`)
-        .then(()=>{
-            console.log("db connection successfull");
-        })
-        .catch(err =>{
-            console.error('db connection error');
-        })
+    _connect() {
+        mongoose.connect(server)
+            .then(() => {
+                console.log("db connection successfull");
+            })
+            .catch(err => {
+                console.error('db connection error');
+            })
     }
 }
 

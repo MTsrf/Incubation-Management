@@ -12,10 +12,7 @@ const app = express()
 import userRouter from './routes/user.js'
 import adminRouter from './routes/admin.js'
 
-app.use(cors({
-    origin: ["http://localhost:3000","http://localhost:3001"],
-    credentials: true,
-}));
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
